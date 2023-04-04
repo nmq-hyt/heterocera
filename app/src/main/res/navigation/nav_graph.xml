@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/cameraFragment">
+
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.example.heterocera.fragments.CameraFragment"
+        android:label="CameraFragment" >
+        <action
+            android:id="@+id/action_cameraFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_cameraFragment_to_observationsFragment"
+            app:destination="@id/observationsFragment" />
+        <action
+            android:id="@+id/action_cameraFragment_to_mapsActivity"
+            app:destination="@id/mapsActivity"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_cameraFragment_to_encyclopediaFragment"
+            app:destination="@id/encyclopediaFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_cameraFragment_to_observationCaptureFragment"
+            app:destination="@id/observationCaptureFragment" />
+        <action
+            android:id="@+id/action_cameraFragment_to_encyclopediaActivity"
+            app:destination="@id/encyclopediaActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.heterocera.fragments.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" >
+        <action
+            android:id="@+id/action_mapsFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/observationsFragment"
+        android:name="com.example.heterocera.fragments.ObservationsFragment"
+        android:label="fragment_observations"
+        tools:layout="@layout/fragment_observations" >
+        <action
+            android:id="@+id/action_observationsFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
+        <action
+            android:id="@+id/action_observationsFragment_to_observationDetailFragment"
+            app:destination="@id/observationDetailFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/mapsActivity"
+        android:name="com.example.heterocera.MapsActivity"
+        android:label="activity_maps"
+        tools:layout="@layout/activity_maps" />
+    <activity
+        android:id="@+id/encyclopediaActivity"
+        android:name="com.example.heterocera.EncyclopediaActivity"
+        android:label="activity_encyclopedia"
+        tools:layout="@layout/activity_encyclopedia" />
+    <fragment
+        android:id="@+id/mothDetailFragment"
+        android:name="com.example.heterocera.fragments.MothDetailFragment"
+        android:label="fragment_moth_detail"
+        tools:layout="@layout/fragment_moth_detail" >
+        <argument
+            android:name="moth_formal_name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/encyclopediaFragment"
+        android:name="com.example.heterocera.fragments.EncyclopediaFragment"
+        android:label="EncyclopediaFragment" >
+        <action
+            android:id="@+id/action_encyclopediaFragment_to_mothDetailFragment"
+            app:destination="@id/mothDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/observationDetailFragment"
+        android:name="com.example.heterocera.ObservationDetailFragment"
+        android:label="fragment_observation_detail"
+        tools:layout="@layout/fragment_observation_detail" >
+        <argument
+            android:name="UUID"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/observationCaptureFragment"
+        android:name="com.example.heterocera.fragments.ObservationCaptureFragment"
+        android:label="fragment_observation_capture"
+        tools:layout="@layout/fragment_observation_capture" >
+        <argument
+            android:name="Recommended label"
+            app:argType="string" />
+        <argument
+            android:name="filename"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_observationCapture_to_cameraFragment"
+            app:destination="@id/cameraFragment" />
+    </fragment>
+</navigation>
