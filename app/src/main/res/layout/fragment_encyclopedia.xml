@@ -4,22 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EncyclopediaActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:theme="@style/Theme.Heterocera">
 
-
-    <SearchView
-        android:id="@+id/search_bar"
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/encyclopedia_search_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:queryHint="@string/encyclopedia_hint"
-        />
+        android:queryHint="@string/encyclopedia_hint"/>
+
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/encyclopediaFragmentRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="LinearLayoutManager"
-        tools:listitem="@layout/moth_item">
+        tools:listitem="@layout/moth_item"
+        style="@style/TextViewHeterocera">
+
     </androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>

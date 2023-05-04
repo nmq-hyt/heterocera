@@ -4,13 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ObservationsActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+   style="@style/Theme.Heterocera">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/observations_search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/observations_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="LinearLayoutManager"
-        tools:listitem="@layout/moth_item">
+        tools:listitem="@layout/moth_item"
+       style="@style/Theme.Heterocera">
     </androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>

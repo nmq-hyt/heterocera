@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1068560886873",
+    "project_id": "erudite-poetry-382803",
+    "storage_bucket": "erudite-poetry-382803.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068560886873:android:1a2e04526d2ffb86bd1548",
+        "android_client_info": {
+          "package_name": "com.heterocera"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1068560886873-blrj81ncbe02lhmv6qvn963erqmh8lt4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.heterocera",
+            "certificate_hash": "2db2fab854fdf0b254ca5a6f1e0de96b5089263e"
+          }
+        },
+        {
+          "client_id": "1068560886873-kvg8inli1kidbrk5f7avjn13h5rikovd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIEwHn-3iTOw3E88RNcVgyBxjoHk7pLIg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1068560886873-kvg8inli1kidbrk5f7avjn13h5rikovd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

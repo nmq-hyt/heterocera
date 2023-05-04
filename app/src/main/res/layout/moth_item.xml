@@ -2,28 +2,36 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="100dp"
+   style="@style/Theme.Heterocera">
 
     <TextView
         android:id="@+id/moth_common_text"
         android:layout_width="290dp"
-        android:layout_height="40dp"
-        android:text="TextView"
-        android:translationX="120dp" />
+        android:layout_height="50dp"
+        android:translationX="120dp"
+        android:gravity="center"
+
+        style="@style/TextViewHeterocera"/>
 
     <TextView
         android:id="@+id/moth_formal_text"
         android:layout_width="290dp"
-        android:layout_height="40dp"
-        android:text="TextView"
+        android:layout_height="50dp"
         android:translationX="120dp"
-        android:translationY="40dp" />
+        android:translationY="50dp"
+        android:gravity="center"
+       style="@style/TextViewHeterocera"/>
 
     <ImageView
         android:id="@+id/moth_image_view"
-        android:layout_width="102dp"
-        android:layout_height="80dp"
-        app:srcCompat="?attr/selectableItemBackground" />
+        android:layout_width="119dp"
+        android:layout_height="match_parent"
+        app:srcCompat="?attr/selectableItemBackground"
+       style="@style/TextViewHeterocera"
+        android:scaleType="fitXY"/>
+
+
 
 </FrameLayout>
 

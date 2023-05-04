@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CameraActivity"
     android:id = "@+id/fragmentCamera">
 
 
+    
     <androidx.camera.view.PreviewView
         android:id="@+id/viewFinder"
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
         android:backgroundTint="@android:color/transparent"
         android:scaleType="fitCenter"
         android:src="@android:drawable/ic_menu_agenda"
-        android:translationY = "-40dp"/>
+        android:translationY = "-40dp" />
 
     <ImageButton
         android:id="@+id/capture_button"
@@ -32,7 +32,8 @@
         android:layout_gravity="center|bottom"
         android:backgroundTint="@android:color/transparent"
         android:scaleType="fitCenter"
-        android:src="@android:drawable/ic_menu_camera" />
+        android:src="@android:drawable/ic_menu_camera"
+        style="@style/Theme.Heterocera"/>
 
     <ImageButton
         android:id="@+id/search_button"
@@ -42,7 +43,8 @@
         android:backgroundTint="@android:color/transparent"
         android:scaleType="fitCenter"
         android:src="@android:drawable/ic_menu_search"
-        android:translationX="-100dp" />
+        android:translationX="-100dp"
+        style="@style/Theme.Heterocera"/>
 
     <ImageButton
         android:id="@+id/map_button"
@@ -52,7 +54,8 @@
         android:backgroundTint="@android:color/transparent"
         android:scaleType="fitCenter"
         android:src="@android:drawable/ic_menu_mapmode"
-        android:translationY="-40dp" />
+        android:translationY="-40dp"
+        style="@style/Theme.Heterocera"/>
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -60,6 +63,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/transparent"
         android:layout_gravity="top|right"
-        app:srcCompat="@android:drawable/ic_menu_help" />
+        app:srcCompat="@android:drawable/ic_menu_help"
+        style="@style/Theme.Heterocera"/>
 
 </FrameLayout>

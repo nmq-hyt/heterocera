@@ -12,7 +12,7 @@
         map:uiScrollGestures="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MapsActivity" />
+        tools:context="com.heterocera.MapsActivity" />
 
     <ImageButton
         android:id="@+id/imageButton"
