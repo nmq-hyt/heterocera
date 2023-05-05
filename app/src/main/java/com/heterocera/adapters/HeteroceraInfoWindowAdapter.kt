@@ -1,14 +1,9 @@
 package com.heterocera.adapters
 
 import android.content.Context
-import android.media.Image
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.ImageView
 import android.widget.TextView
-import androidx.compose.ui.layout.Layout
-import com.bumptech.glide.Glide
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.Marker
 import com.heterocera.R

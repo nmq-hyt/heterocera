@@ -9,7 +9,6 @@ import android.widget.Filter
 import android.widget.Filterable
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -107,4 +106,5 @@ object MothDiffCallback : DiffUtil.ItemCallback<MothSpecies>() {
 
 
 }
+
 
