@@ -39,16 +39,16 @@
 
     <TextView
         android:id="@+id/encyclopedia_entry_description"
+        style="@style/TextViewHeterocera"
         android:layout_width="match_parent"
-        android:layout_height="165dp"
+        android:layout_height="264dp"
         android:enabled="true"
         android:gravity="top"
         android:scrollHorizontally="false"
-        android:text="This species has a wingspan of 45–52 mm and the forewings are very distinctively shaped with a sharply pointed apex. The common name is derived from the characteristic markings on the forewings: the base colour is buffish, brown towards the termen, and is marked with a bold V-shaped pink-and-green marking. Despite this bright colouring, the angular markings provide excellent disruptive patterning camouflage. The hindwings are whitish with darker venation. "
         android:singleLine="false"
+        android:text="This species has a wingspan of 45–52 mm and the forewings are very distinctively shaped with a sharply pointed apex. The common name is derived from the characteristic markings on the forewings: the base colour is buffish, brown towards the termen, and is marked with a bold V-shaped pink-and-green marking. Despite this bright colouring, the angular markings provide excellent disruptive patterning camouflage. The hindwings are whitish with darker venation. "
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:translationY="200dp"
-        style="@style/TextViewHeterocera"/>
+        android:translationY="200dp" />
 
 
 

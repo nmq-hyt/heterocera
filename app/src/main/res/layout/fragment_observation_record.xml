@@ -36,16 +36,17 @@
         android:layout_height="100dp"
         android:translationY="200dp"
        style="@style/TextViewHeterocera"/>
+
     <TextView
         android:id="@+id/observation_description"
+        style="@style/TextViewHeterocera"
         android:layout_width="match_parent"
-        android:layout_height="165dp"
+        android:layout_height="280dp"
         android:enabled="true"
         android:gravity="top"
         android:singleLine="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:translationY="300dp"
-       style="@style/TextViewHeterocera"/>
+        android:translationY="300dp" />
 
 
 </FrameLayout>
