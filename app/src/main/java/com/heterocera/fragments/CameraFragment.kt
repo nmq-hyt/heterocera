@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.os.Bundle
 import android.os.Environment
@@ -26,7 +25,6 @@ import com.heterocera.R
 import com.heterocera.databinding.FragmentCameraBinding
 import com.heterocera.ml.Replica
 import com.heterocera.utils.YuvToRgbConverter
-import kotlinx.coroutines.runBlocking
 import org.tensorflow.lite.support.image.TensorImage
 import java.io.File
 import java.text.SimpleDateFormat
@@ -115,7 +113,7 @@ class CameraFragment : Fragment() {
                 // Bind use cases to camera
                 cameraProvider.bindToLifecycle(
                     this, cameraSelector, preview,imageAnalyzer,imageCapture)
-                Log.e(TAG,"Use case binding suceeded")
+                Log.e(TAG,"Use case binding succeeded")
 
             } catch(exc: Exception) {
                 Log.e(TAG, "Use case binding failed", exc)
@@ -218,8 +216,6 @@ class CameraFragment : Fragment() {
                     // to navigate to image capture with a non-existent file
                     // which will immediately crash
                     val msg = "Photo capture succeeded: ${output.savedUri?.path}"
-                    val bitmap =  BitmapFactory.decodeStream(activityContext.contentResolver
-                        .openInputStream(output.savedUri!!))
                     Toast.makeText(activityContext, msg, Toast.LENGTH_SHORT).show()
                     Log.d(TAG, msg)
                     val action = CameraFragmentDirections.actionCameraFragmentToObservationCaptureFragment(highestLabel,

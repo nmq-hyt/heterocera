@@ -1,33 +1,17 @@
 package com.heterocera.fragments
 
 import android.content.Context
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.ImageDecoder
-import android.graphics.drawable.Drawable
 import android.net.Uri
-import androidx.fragment.app.Fragment
-
 import android.os.Bundle
-import android.provider.MediaStore
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.core.graphics.scale
-import androidx.core.net.toFile
-import androidx.fragment.app.setFragmentResultListener
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.target.CustomTarget
-import com.bumptech.glide.request.target.SimpleTarget
-import com.bumptech.glide.request.transition.Transition
-
-import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener
 import com.google.android.gms.maps.GoogleMapOptions
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
@@ -38,10 +22,6 @@ import com.heterocera.database.HeteroceraDatabase
 import com.heterocera.database.Repository
 import com.heterocera.viewmodel.ObservationViewModel
 import com.heterocera.viewmodel.ObservationViewModelFactory
-import kotlinx.coroutines.runBlocking
-import java.io.File
-import java.io.FileInputStream
-import java.net.URI
 import java.time.Instant
 import java.time.OffsetDateTime
 import java.time.ZoneId
@@ -93,9 +73,9 @@ class MapsFragment : Fragment(){
         val inputStream = activityContext.contentResolver.openInputStream(Uri.parse(markerImage))
         val imgBitmap = BitmapFactory.decodeStream(inputStream)
         newMarker!!.setIcon(BitmapDescriptorFactory.fromBitmap(imgBitmap.scale(75,75)))
-        newMarker?.tag =  uuid
-        newMarker!!.hideInfoWindow()
-        newMarker!!.showInfoWindow()
+        newMarker.tag =  uuid
+        newMarker.hideInfoWindow()
+        newMarker.showInfoWindow()
         inputStream!!.close()
 
     }

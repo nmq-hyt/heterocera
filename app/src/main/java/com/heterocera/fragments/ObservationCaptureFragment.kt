@@ -16,7 +16,6 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -98,7 +97,7 @@ open class ObservationCaptureFragment : Fragment() {
         Toast.makeText(activityContext,"Getting your location data ... Please wait",Toast.LENGTH_LONG).show()
         LocationServices.getFusedLocationProviderClient(activityContext).lastLocation
             .addOnSuccessListener {
-                Toast.makeText(activityContext,"Sucesfully found Geo coordinates.",Toast.LENGTH_SHORT).show()
+                Toast.makeText(activityContext,"Successfully found Geo coordinates.",Toast.LENGTH_SHORT).show()
             }.addOnFailureListener {
                 Toast.makeText(activityContext,"Failed to find geographical coordinates. " +
                         "You can edit your observation manually in the observations screen. ",
@@ -136,7 +135,7 @@ open class ObservationCaptureFragment : Fragment() {
         imgMap["gold_spot"] = "Gold spot"
         imgMap["grass_emerald"] = "Grass Emerald"
         imgMap["green-brindled_crescent"] = "Green-Brindled crescent"
-        //deliberatly mispelled, don't change it
+        //deliberately misspelled, don't change it
         imgMap["green_carept"] = "Green carpet"
         imgMap["heart_and_dart"] = "Heart and Dart"
         imgMap["hummingbird_hawkmoth"] = "Hummingbird Hawkmoth"

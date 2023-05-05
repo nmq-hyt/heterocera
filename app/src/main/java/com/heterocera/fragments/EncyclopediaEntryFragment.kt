@@ -1,10 +1,7 @@
 package com.heterocera.fragments
 
 import android.content.Context
-import android.graphics.BitmapFactory
-import android.media.Image
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,10 +9,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.heterocera.R
-import com.heterocera.adapters.MothListAdapter
 import com.heterocera.database.HeteroceraDatabase
 import com.heterocera.database.Repository
 
@@ -70,7 +65,7 @@ class EncyclopediaEntryFragment : Fragment() {
         imgMap["gold_spot"] = R.drawable.gold_spot
         imgMap["grass_emerald"] = R.drawable.grass_emerald
         imgMap["green-brindled_crescent"] = R.drawable.green_brindled_crescent
-        //deliberatly mispelled, don't change it
+        //deliberately misspelled, don't change it
         imgMap["green_carept"] = R.drawable.green_carpet
         imgMap["heart_and_dart"] = R.drawable.heart_and_dart
         imgMap["hummingbird_hawkmoth"] = R.drawable.hummingbird_hawkmoth

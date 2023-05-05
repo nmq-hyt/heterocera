@@ -8,20 +8,14 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.heterocera.adapters.ObservationsListAdapter
 import com.heterocera.R
+import com.heterocera.adapters.ObservationsListAdapter
 import com.heterocera.database.HeteroceraDatabase
-import com.heterocera.database.Observations
 import com.heterocera.database.Repository
 import com.heterocera.viewmodel.ObservationViewModel
 import com.heterocera.viewmodel.ObservationViewModelFactory
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.flatMapLatest
-import kotlinx.coroutines.runBlocking
 
 class ObservationsFragment : Fragment() {
     private lateinit var activityContext: Context

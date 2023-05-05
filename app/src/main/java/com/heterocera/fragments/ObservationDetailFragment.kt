@@ -1,9 +1,6 @@
 package com.heterocera.fragments
 
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.Matrix
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -50,9 +47,9 @@ class ObservationDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val uuid = arguments?.getString("uuid")
-        // for asynchronous actions, like retreiving data
+        // for asynchronous actions, like retrieving data
         // Room mandates that you can't do database operations on the main thread
-        // which is eminetly reasonable in y mind
+        // which is eminently reasonable in my mind
         // the database reads and assignments to UI
         // is done at lifecycle creation, after the UI
         // has been initialized in onCreateView
