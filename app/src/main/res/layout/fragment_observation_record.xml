@@ -15,13 +15,7 @@
         app:srcCompat="?attr/selectableItemBackground"
        style="@style/TextViewHeterocera"/>
 
-    <TextView
-        android:id="@+id/observation_formal_view"
-        android:layout_width="215dp"
-        android:layout_height="100dp"
-        android:translationX="200dp"
-        android:translationY="100dp"
-       style="@style/TextViewHeterocera"/>
+
 
     <TextView
         android:id="@+id/observation_moth_common_name"
@@ -32,21 +26,33 @@
 
     <TextView
         android:id="@+id/observation_gps_text_view"
+        style="@style/TextViewHeterocera"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:translationY="200dp"
-       style="@style/TextViewHeterocera"/>
+        android:layout_height="61dp"
+        android:translationY="200dp" />
 
-    <TextView
+    <Spinner
+        android:id="@+id/observation_common_name_spinner"
+        style="@style/TextViewHeterocera"
+        android:layout_width="171dp"
+        android:layout_height="102dp"
+        android:gravity="right"
+
+        android:textColor="@color/white"
+        android:translationX="200dp"
+        android:translationY="100dp" />
+
+    <EditText
         android:id="@+id/observation_description"
         style="@style/TextViewHeterocera"
         android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_height="215dp"
         android:enabled="true"
         android:gravity="top"
+        android:inputType="textMultiLine"
         android:singleLine="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:translationY="300dp" />
+        android:translationY="260dp" />
 
 
 </FrameLayout>

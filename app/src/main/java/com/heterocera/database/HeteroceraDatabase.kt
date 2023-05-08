@@ -17,14 +17,13 @@ abstract class HeteroceraDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: HeteroceraDatabase? = null
         fun getDatabase(context: Context): HeteroceraDatabase {
-            // return database if it exists,
-            //else get the database and return it
+
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     HeteroceraDatabase::class.java,
                     "moth_database"
-                ).createFromAsset("heterocera.db").fallbackToDestructiveMigration()
+                ).createFromAsset("heterocera_database.db")
                     .allowMainThreadQueries()
                     .build()
                 INSTANCE = instance

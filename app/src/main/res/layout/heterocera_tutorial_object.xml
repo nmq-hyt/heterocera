@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.Heterocera"
+    >
+
+    <TextView
+        android:id="@+id/heterocera_tutorial_text_view_one"
+        style="@style/TextViewHeterocera"
+        android:layout_width="255dp"
+        android:autoSizeTextType="uniform"
+        android:layout_height="180dp"
+        android:theme="@style/Theme.Heterocera"
+        android:translationY="180dp" />
+
+    <ImageView
+        android:id="@+id/heterocera_tutorial_image_view_one"
+        style="@style/TextViewHeterocera"
+        android:layout_width="115dp"
+        android:layout_height="180dp"
+        android:theme="@style/Theme.Heterocera"
+        android:translationX="253dp"
+        android:translationY="180dp" />
+
+    <TextView
+        android:id="@+id/heterocera_tutorial_text_header"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="120dp"
+        android:theme="@style/Theme.Heterocera"
+        style="@style/TextViewHeterocera"
+        android:textAlignment="center"
+        android:textSize="32sp"
+        android:text="@string/heterocera_instructions"
+        tools:ignore="RtlCompat" />
+
+    <ImageView
+        android:id="@+id/heterocera_tutorial_image_view_two"
+        style="@style/TextViewHeterocera"
+        android:layout_width="115dp"
+        android:layout_height="170dp"
+        android:theme="@style/Theme.Heterocera"
+        android:translationX="253dp"
+        android:translationY="440dp" />
+
+    <TextView
+        android:id="@+id/heterocera_tutorial_text_view_two"
+        style="@style/TextViewHeterocera"
+        android:layout_width="255dp"
+        android:autoSizeTextType="uniform"
+        android:layout_height="170dp"
+        android:theme="@style/Theme.Heterocera"
+        android:translationY="440dp" />
+
+
+
+</FrameLayout>

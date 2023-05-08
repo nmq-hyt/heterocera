@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textColor="@color/white"
-    android:textSize="11pt"
+    android:textSize="6pt"
     android:gravity="center"
     android:text="Lorem Ipsum"
 

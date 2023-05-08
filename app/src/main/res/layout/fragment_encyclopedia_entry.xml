@@ -19,7 +19,7 @@
     <TextView
         android:id="@+id/encyclopedia_entry_formal_view"
         style="@style/TextViewHeterocera"
-        android:layout_width="179dp"
+        android:layout_width="177dp"
         android:layout_height="100dp"
         android:gravity="center"
         android:translationX="200dp"

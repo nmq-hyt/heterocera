@@ -129,7 +129,8 @@ class EncyclopediaFragment : Fragment() {
         recyclerView  = view.findViewById(R.id.encyclopediaFragmentRecyclerView)
         viewLifecycleOwner.lifecycleScope.launchWhenCreated {
             mothViewModel.alphabetizedMothSpecies.collect {value: List<MothSpecies> ->
-                val mothListAdapter = MothListAdapter(value,imgMap)
+                val mothList = mothViewModel.mothArray
+                val mothListAdapter = MothListAdapter(mothList,imgMap)
                 mothListAdapterReference = mothListAdapter
                 recyclerView.adapter = mothListAdapter
 

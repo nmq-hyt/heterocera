@@ -58,7 +58,7 @@
         style="@style/Theme.Heterocera"/>
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/help_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/transparent"

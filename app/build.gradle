@@ -81,7 +81,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage-ktx'
     implementation 'com.google.firebase:firebase-messaging'
     implementation 'com.google.firebase:firebase-analytics'
-
+    implementation 'androidx.viewpager2:viewpager2:1.1.0-beta01'
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.10'
     implementation "com.google.devtools.ksp:symbol-processing-api:1.8.0-1.0.8"
     implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0'

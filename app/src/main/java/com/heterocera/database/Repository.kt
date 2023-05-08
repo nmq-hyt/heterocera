@@ -14,6 +14,14 @@ class Repository(private val eDAO: EncyclopediaDAO, private val oDAO: Observatio
             obs_formal,obs_comm)
     }
 
+    suspend fun updateObservation(formal_name:String,common_name:String,description:String,observation_uuid:String) {
+        oDAO.updateObservation(formal_name,common_name,description,observation_uuid)
+    }
+
+    suspend fun updateDescription(description: String,uuid:String) {
+        oDAO.updateDescription(description,uuid)
+    }
+
     suspend fun deleteAllObservations() {
         oDAO.deleteAllObservations()
     }
@@ -28,11 +36,13 @@ class Repository(private val eDAO: EncyclopediaDAO, private val oDAO: Observatio
     suspend fun getMothFromFormal(formalName: String): MothSpecies {
         return eDAO.findByFormalName(formalName)
     }
-    fun getMothDescription(formalName:String) {
-        eDAO.getMothDesc(formalName)
+
+
+    suspend fun getMothDescription(formalName:String) : String {
+        return eDAO.getMothDesc(formalName)
     }
-    fun getAllMoths() {
-        eDAO.getAll()
+    suspend fun getAllMoths(): List<MothSpecies> {
+        return eDAO.getAll()
     }
 
 

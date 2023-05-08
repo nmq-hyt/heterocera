@@ -13,6 +13,7 @@ import androidx.navigation.fragment.navArgs
 import com.heterocera.R
 import com.heterocera.database.HeteroceraDatabase
 import com.heterocera.database.Repository
+import kotlinx.coroutines.runBlocking
 
 
 class EncyclopediaEntryFragment : Fragment() {
@@ -118,15 +119,18 @@ class EncyclopediaEntryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val formalName = arguments?.getString("formal_name")
+
         viewLifecycleOwner.lifecycleScope.launchWhenCreated {
+
             val moth = formalName?.let { repository.getMothFromFormal(it) }
             if (moth != null) {
+                val mothDescription = repository.getMothDescription(moth.SpeciesFormalName)
                 view.findViewById<TextView>(R.id.encyclopedia_entry_common_name).text =
                     moth.SpeciesVulgarName
                 view.findViewById<TextView>(R.id.encyclopedia_entry_formal_view).text =
                     moth.SpeciesFormalName
                 view.findViewById<TextView>(R.id.encyclopedia_entry_description).text =
-                    moth.SpeciesDescription
+                    mothDescription
                 val rInt: Int? = imgMap[moth?.ReferencePhotographFileString?.removePrefix("/home/nmq-hyt/AndroidStudioProjects/Heterocera/app/src/main/assets/")?.removeSuffix(".jpeg")]
                 view.findViewById<ImageView>(R.id.encyclopedia_entry_image)
                     .setImageResource(rInt!!)

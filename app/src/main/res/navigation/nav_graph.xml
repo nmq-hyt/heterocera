@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_cameraFragment_to_mapsFragment"
             app:destination="@id/mapsFragment" />
+        <action
+            android:id="@+id/action_cameraFragment_to_heteroceraTutorialFragment"
+            app:destination="@id/heteroceraTutorialFragment" />
     </fragment>
     <fragment
         android:id="@+id/encyclopediaFragment"
@@ -81,4 +84,9 @@
         android:name="com.heterocera.fragments.MapsFragment"
         android:label="fragment_maps"
         tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@+id/heteroceraTutorialFragment"
+        android:name="com.heterocera.fragments.HeteroceraTutorialFragment"
+        android:label="fragment_heterocera_tutorial2"
+        tools:layout="@layout/fragment_heterocera_tutorial2" />
 </navigation>

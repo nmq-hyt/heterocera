@@ -11,17 +11,22 @@ import android.provider.MediaStore
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.ScaleGestureDetector
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
+import androidx.camera.lifecycle.*
+import androidx.camera.view.PreviewView
+
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import com.heterocera.R
+
 import com.heterocera.databinding.FragmentCameraBinding
 import com.heterocera.ml.Replica
 import com.heterocera.utils.YuvToRgbConverter
@@ -59,10 +64,12 @@ class CameraFragment : Fragment() {
     }
 
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val cameraProviderFuture = ProcessCameraProvider.getInstance(activityContext)
         val navControl = this.findNavController()
+
 
         cameraExecutor = Executors.newSingleThreadExecutor()
         cameraProviderFuture.addListener({
@@ -95,6 +102,10 @@ class CameraFragment : Fragment() {
                 takePhoto(this)
             }
 
+            fragmentCameraBinding.helpButton.setOnClickListener {
+                navControl.navigate(R.id.action_cameraFragment_to_heteroceraTutorialFragment)
+            }
+
             fragmentCameraBinding.mapButton.setOnClickListener {
                 navControl.navigate(R.id.action_cameraFragment_to_mapsFragment)
             }
@@ -111,14 +122,40 @@ class CameraFragment : Fragment() {
                 cameraProvider.unbindAll()
 
                 // Bind use cases to camera
-                cameraProvider.bindToLifecycle(
+               val camera =  cameraProvider.bindToLifecycle(
                     this, cameraSelector, preview,imageAnalyzer,imageCapture)
+                val cameraControl = camera.cameraControl
+                val cameraInfo = camera.cameraInfo
+                val listener = object : ScaleGestureDetector.SimpleOnScaleGestureListener() {
+                    override fun onScale(detector: ScaleGestureDetector): Boolean {
+                        // Get the camera's current zoom ratio
+                        val currentZoomRatio = cameraInfo.zoomState.value?.zoomRatio ?: 0F
+
+                        // Get the pinch gesture's scaling factor
+                        val delta = detector.scaleFactor
+
+                        // Update the camera's zoom ratio. This is an asynchronous operation that returns
+                        // a ListenableFuture, allowing you to listen to when the operation completes.
+                        cameraControl.setZoomRatio(currentZoomRatio * delta)
+
+                        // Return true, as the event was handled
+                        return true
+                    }
+                }
+                val scaleGestureDetector = ScaleGestureDetector(activityContext, listener)
+                view.findViewById<PreviewView>(R.id.viewFinder).setOnTouchListener{_,event ->
+                        scaleGestureDetector.onTouchEvent(event)
+                        return@setOnTouchListener true
+                    }
                 Log.e(TAG,"Use case binding succeeded")
+
+
 
             } catch(exc: Exception) {
                 Log.e(TAG, "Use case binding failed", exc)
             }
         }, ContextCompat.getMainExecutor(activityContext))
+
     }
 
     inner class MothImageAnalyzer(context: Context) : ImageAnalysis.Analyzer {

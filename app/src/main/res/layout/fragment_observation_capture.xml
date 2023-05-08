@@ -42,36 +42,36 @@
 
     <TextView
         style="@style/TextViewHeterocera"
-        android:layout_width="137dp"
+        android:layout_width="211dp"
         android:layout_height="86dp"
-        android:autoSizeTextType="uniform"
+
         android:maxLines="5"
         android:text="@string/moth_species_spinner_info"
         android:textColor="@color/white"
-        android:textSize="2sp"
-        android:translationX="210dp"
+        android:textSize="8pt"
+        android:translationX="180dp"
         android:translationY="185dp" />
 
     <EditText
         android:id="@+id/observation_description"
         android:layout_width="match_parent"
-        android:textColor="@color/white"
         android:layout_height="165dp"
         android:enabled="true"
         android:gravity="top"
+        android:textColor="@color/white"
         android:hint="Enter your observation description here."
         android:inputType="textMultiLine"
         android:singleLine="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:translationY="335dp"
         style="@style/TextViewHeterocera"/>
 
     <Spinner
         android:id="@+id/common_name_spinner"
         style="@style/TextViewHeterocera"
-        android:layout_width="413dp"
+        android:layout_width="211dp"
         android:layout_height="65dp"
         android:textColor="@color/white"
+        android:translationX="180dp"
         android:translationY="270dp" />
 
     <Button

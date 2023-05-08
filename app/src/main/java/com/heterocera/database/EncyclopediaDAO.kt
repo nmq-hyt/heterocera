@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface EncyclopediaDAO {
-    @Query("SELECT * FROM MothSpecies")
+    @Query("SELECT * FROM MothSpecies ORDER BY common_name ASC")
     fun getAll(): List<MothSpecies>
 
     @Query("SELECT * FROM MothSpecies WHERE common_name LIKE :argument LIMIT 1")
@@ -21,6 +21,9 @@ interface EncyclopediaDAO {
 
     @Query("SELECT description_string FROM MothSpecies WHERE formal_name LIKE :argument LIMIT 1")
     fun getMothDesc(argument: String) : String
+
+    @Query("UPDATE MothSpecies SET common_name = :set_name WHERE common_name = :change_name")
+    fun updateMoth(set_name:String, change_name:String)
 
     @Query("SELECT formal_name FROM MothSpecies WHERE common_name LIKE :argument LIMIT 1")
     fun getFormalFromCommon(argument: String): String

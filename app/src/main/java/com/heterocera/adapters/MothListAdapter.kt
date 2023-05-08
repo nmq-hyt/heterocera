@@ -107,4 +107,3 @@ object MothDiffCallback : DiffUtil.ItemCallback<MothSpecies>() {
 
 }
 
-
